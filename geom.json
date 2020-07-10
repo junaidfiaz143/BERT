@@ -1,0 +1,32 @@
+"filter": {  
+   "type":"AndFilter",
+   "config":[  
+      {  
+         "type":"DateRangeFilter",
+         "field_name":"acquired",
+         "config":{  
+            "gte":"2020-01-01T00:00:00Z",
+            "lte":"2020-01-31T00:00:00Z"
+         }
+      },
+      {  
+         "type":"StringInFilter",
+         "field_name":"ground_control",
+         "config":[  
+            "true"
+         ]
+      },
+      {
+         "type": "AssetFilter",
+         "config": [
+            "analytic_sr"
+         ]
+      },      
+      {  
+         "type":"PermissionFilter",
+         "config":[  
+            "assets:download"
+         ]
+      }
+   ]
+}
